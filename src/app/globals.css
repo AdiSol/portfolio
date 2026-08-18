@@ -16,6 +16,10 @@
   --color-blob-3: #f9cc8c;
   --color-blob-4: #a898dc;
 
+  --nav-hover: #6a5acd;
+  --nav-text: #333366;
+  --nav-active: rgba(147, 112, 219, 0.2);
+
   /* ---- Type scale ---- */
   --font-size-xs: 0.75rem;
   --font-size-sm: 0.875rem;
@@ -36,7 +40,10 @@
   --spacing-16: 4rem;
 
   --radius-default: 0.5rem;
+  --radius-round: 0.99rem;
   --radius-card: 0.75rem;
+
+  
 }
 
 .dark {
