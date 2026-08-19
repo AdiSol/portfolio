@@ -1,0 +1,38 @@
+---
+title: "SafeHands"
+slug: "safehands"
+year: 2022
+role: "Full Stack Developer"
+stack: ["React.js", "Flask Python", "Server Sent Events", "Konva.js", "Nginx"]
+tagline: "A real-time computer vision safety system that stops punch presses before they can hurt a hand — now running in production at Panasonic."
+coverImage: "/images/safehands-cover.jpg"
+liveUrl: "https://www.youtube.com/watch?v=j1Jgos9DHnA"
+repoUrl: ""
+nda: true
+ndaNote: "Source under NDA"
+---
+
+## Overview
+
+Punch and bend presses are some of the most dangerous machines on a factory floor. SafeHands is a computer vision safety system that watches the danger zone in real time and stops the machine the instant a hand or arm enters it. I built everything except the detection model itself — backend, frontend, camera integration, and the real-time pipeline connecting them. It won 1st place at AI+ Day 2022 and has run in production at **Panasonic** ever since, with zero recorded incidents.
+
+## The Problem
+
+Traditional safety guards slow operators down, so operators disable them to hit production targets — trading safety for speed. Panasonic's case was harder still: their metal bending machinery used a non-standard configuration that existing safety hardware couldn't be adapted to. What was needed instead: a system that could tell a hand from a workpiece, in real time, fast enough to matter.
+
+## What I Built
+
+A neural network (built by a teammate) recognizes hands and arms; everything around it — getting that detection to actually stop a machine in time — was mine.
+
+- Built the full **React.js** frontend and the **Flask** backend from scratch.
+- Used **Server-Sent Events** to stream detection state from model to interface in real time, so a stop event shows up the instant it happens on the floor.
+- Integrated with **Advantech's camera web API**, building a custom interface that replaced their standalone camera app with just the controls our use case needed — including debounced calls and stepped zoom limits to keep the hardware from getting hammered with redundant requests.
+- Built a **6-point ROI overlay** on the live video feed so the AI engineer could define exactly where hand detection should trigger — no existing library supported this. Started in raw Canvas, which choked on re-renders, then rebuilt it in **Konva.js** for a smooth, responsive overlay.
+- Streamlined deployment, cutting setup time per installation from a full day to **30 minutes**.
+
+## Results
+
+- **100% detection accuracy** identifying limbs and triggering an automatic stop, even in setups where traditional safety guards had been disabled.
+- **150ms response time** from detection to shutdown — fast enough to act before contact.
+- Deployed at **Panasonic** since 2022, solving a safety problem their existing equipment couldn't — with no reported accidents as of 2026.
+- 1st place, AI+ Day 2022.

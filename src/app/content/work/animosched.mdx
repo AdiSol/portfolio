@@ -1,0 +1,54 @@
+---
+title: "AnimoSched: a semi-automatic scheduling system"
+slug: "animosched"
+year: 2021
+role: "Lead UX Researcher & Frontend Developer"
+stack: ["React.js", "Boolean SAT Solver", "Django"]
+tagline: "A SAT solver-powered scheduling system that cut decision-making time and stress for students building a common schedule with friends."
+coverImage: "/images/animosched-cover.jpg"
+liveUrl: "https://dl.acm.org/doi/10.1145/3411764.3445681"
+repoUrl: "https://github.com/joshmzndev/AnimoSched"
+nda: false
+ndaNote: "Source under NDA"
+---
+ 
+## Overview
+ 
+Every term, students at our university had to hand-build a class schedule that satisfied dozens of constraints — required courses, time conflicts, preferred professors — often while trying to sync up with friends. It was slow, error-prone, and mentally exhausting. AnimoSched is a semi-automated scheduling tool that uses a Boolean satisfiability (SAT) solver to generate valid schedule options from a student's preferences, cutting out the tedious parts of the process while leaving the final call in their hands. I led UX research and built four of the six pages as one of two developers on a four-person team. We validated the system in a controlled study with 42 students and published the results at **CHI 2021** — as, to our knowledge, the first fully Filipino-authored paper at the conference.
+ 
+## The Problem
+ 
+Talking to students surfaced three consistent pain points in schedule-building:
+ 
+- **Inefficiency and redundancy** — sorting through every offered class and manually checking for time conflicts, over and over.
+- **Information overload** — juggling professor preferences, time slots, and workload balance across dozens of open tabs.
+- **Error-proneness** — conflicts and typos that went unnoticed until it was too late to fix them.
+**The question we designed around:** how might we help students make faster, less stressful scheduling decisions — without taking the decision away from them entirely?
+ 
+## Research
+ 
+Before touching a design tool, we needed to confirm the problem was real and understand it from the students' side. I led the team through a three-phase need-finding process:
+ 
+- **Survey** (54 respondents) to map how students actually build schedules today, what tools they reach for, and where the friction lives.
+- **Semi-structured interviews** (16 participants), which I moderated, digging into the more surprising or unexpected survey responses.
+- **Contextual inquiry** (5 participants), watching students build a real schedule end to end to catch friction they wouldn't think to mention.
+I led the synthesis of that data into affinity diagrams, user personas, and customer journey maps, and compiled student scheduling preferences — time, day, professor, proximity, course priority, workload — into a taxonomy that directly shaped which preferences the system would let users specify.
+ 
+## What I Built
+ 
+As **Lead UX Researcher**, I designed the testing protocol the team followed throughout, moderated the majority of interviews, and led synthesis of the findings into design direction.
+ 
+As **frontend developer**, I built four of the six pages in the React.js application, focused on the two hardest interaction problems in the product: rendering the generated schedule visually, and structuring the preference input fields that fed the SAT solver.
+ 
+We prototyped in Figma, tested with real students, and iterated the design before validating the final build against how students normally schedule on their own.
+ 
+## Results
+ 
+We ran a controlled study with 42 students split into a control group (using their own usual methods) and an experimental group (using AnimoSched), then measured outcomes with NASA-TLX, PANAS, UEQ, and SMEQ.
+ 
+- **Lower cognitive load:** perceived workload dropped significantly for the experimental group (NASA-TLX) — students described tasks like conflict resolution as "easy" instead of "difficult."
+- **Less stress:** both PANAS and NASA-TLX frustration scores showed a significant drop for students using the system.
+- **Faster decisions:** students completed schedules in meaningfully less time than the control group, with our own product metrics showing a 43.21% reduction in schedule creation time.
+- **Fewer errors:** the control group repeatedly created schedules with unnoticed conflicts; the experimental group did not.
+- **Higher satisfaction:** students using AnimoSched rated their final schedules as more satisfying than those who built schedules manually.
+The full study, methodology, and statistical results are published in the CHI 2021 proceedings.

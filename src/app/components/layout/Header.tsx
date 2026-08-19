@@ -34,6 +34,7 @@ export default function Header () {
                         width={45}
                         height={45}
                         className="h-8 w-8 sm:h-11.25 sm:w-11.25"
+                        priority
                     />
                 </Link>
                 <nav

@@ -1,0 +1,37 @@
+---
+title: "Jeremiah Manzano Portfolio"
+slug: "manzano"
+year: 2025
+role: "Sole Developer"
+stack: ["Next.js", "TypeScript", "Cloudinary", "Vercel"]
+tagline: "A portfolio site built for speed and near-zero hosting cost"
+coverImage: "/images/manzano-cover.jpg"
+liveUrl: "https://jerem-manzano-portfolio.vercel.app/"
+repoUrl: "https://github.com/AdiSol/Photography-Portfolio-Public"
+nda: false
+ndaNote: "Source under NDA"
+---
+
+## Overview
+ 
+Jeremiah Manzano is a photo and video editor who needed a portfolio that could do one thing really well: prove his editing skill by putting the before and after side by side. He also had a tight budget, so every technical decision had to earn its keep. I designed and built the site solo, from Figma mockup to production deploy.
+ 
+## The Problem
+ 
+Two constraints shaped everything:
+ 
+- **Show the transformation, not just the result.** Static before/after images don't communicate the *work* — viewers need to interact with the comparison to feel the impact.
+- **Keep hosting costs near zero.** Video and high-res photography are expensive to serve. A typical media-heavy portfolio would eat into a freelancer's margins fast.
+## What I Built
+ 
+- **Custom before/after sliders** for the photo gallery, so visitors drag to reveal the edit instead of just scrolling past two static images.
+- **YouTube embeds instead of self-hosted video**, offloading the most expensive asset type onto infrastructure that's already free and fast.
+- **A file-based CMS**, so Jeremiah can swap in new work without a database or admin panel to maintain.
+- **Next.js image optimization** (automatic WebP/AVIF, lazy loading, route-based code splitting) to keep load times fast despite a photography-heavy site.
+- **Right-click and overlay-based image protection**, balancing a smooth viewing experience against casual downloading of his work.
+## Results
+ 
+- Shipped a fully responsive, production-ready site on Vercel's free tier — no backend, no database, no recurring hosting bill.
+- The before/after slider became the centerpiece of the photo section and the feature Jeremiah leads with when showing the site to prospective clients.
+- Fast first paint even on media-heavy pages, thanks to lazy loading and automatic image format selection.
+ 
