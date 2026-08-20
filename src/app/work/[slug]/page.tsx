@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { getAllSlugs, getProjectFrontmatter } from "@/lib/work";
+import Image from "next/image";
 
 export function generateStaticParams() {
   return getAllSlugs().map((slug) => ({ slug }));
@@ -63,7 +64,13 @@ export default async function CaseStudyPage({
         <p className="mt-2 text-lg text-[color:var(--color-text-secondary)]">
           {project.tagline}
         </p>
-
+        <Image
+            src={project.coverImage}
+            alt={`${project.title} cover image`}
+            width={800}
+            height={400}
+            className="mt-6 rounded-lg object-cover"
+        />
         <div className="mt-4 flex flex-wrap gap-2">
           {project.stack.map((tech) => (
             <span
@@ -103,6 +110,7 @@ export default async function CaseStudyPage({
             {project.ndaNote}{" "}
           </p>
         )}
+        
       </header>
 
       <article className="prose prose-neutral max-w-none">
