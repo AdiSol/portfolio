@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { getAllSlugs, getProjectFrontmatter } from "@/lib/work";
 import Image from "next/image";
+import { FaLock } from "react-icons/fa";
 
 export function generateStaticParams() {
   return getAllSlugs().map((slug) => ({ slug }));
@@ -106,9 +107,13 @@ export default async function CaseStudyPage({
         </div>
 
         {project.nda && (
-          <p className="mt-3 text-sm text-[color:var(--color-text-secondary)]">
-            {project.ndaNote}{" "}
-          </p>
+            <span className="flex items-center gap-2 mt-2">
+                <FaLock size={24} className="text-black" ></FaLock>
+                <span className="mt-3 text-sm text-[color:var(--color-text-secondary)]">
+                    {project.ndaNote}{" "}
+                </span>
+            </span>
+            
         )}
         
       </header>
