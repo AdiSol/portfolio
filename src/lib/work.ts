@@ -16,6 +16,8 @@ export type ProjectFrontmatter = {
     repoUrl?: string | null;
     nda?: boolean;
     ndaNote?: string;
+    context?: string;
+    metric?: string;
 };
 
 export function getAllProjects(): ProjectFrontmatter[] {

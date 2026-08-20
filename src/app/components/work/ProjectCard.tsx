@@ -8,13 +8,13 @@ export type ProjectCardData = {
     role: string;
     stack: string[];
     coverImage: string;
-    slug: string;
     liveUrl?: string;
     repoUrl?: string | null;
     nda?: boolean;
     ndaNote?: string;
     metric?: string;
     context?: string;
+    slug?: string // only for projects with case study pages
 }
 
 export default function ProjectCard({ project }: { project: ProjectCardData }) {
