@@ -105,7 +105,7 @@ export default async function CaseStudyPage({
         )}
       </header>
 
-      <article className="prose prose-neutral max-w-none dark:prose-invert">
+      <article className="prose prose-neutral max-w-none">
         <MDXContent />
       </article>
 
