@@ -1,4 +1,5 @@
 import Image from "next/image"
+import Socials from "./Socials"
 
 export default function Hero() {
     const CX = 150
@@ -7,7 +8,7 @@ export default function Hero() {
     return (
         <section className="mx-auto max-w-3xl flex-col items-center gap-6 px-6 pb-20 pt-20 text-center sm:pt-32">
             <div
-            className="justify-center items-center flex"
+                className="justify-center items-center flex"
             >
                 <div className="relative h-105 w-87.5">
                     <Image
@@ -34,6 +35,7 @@ export default function Hero() {
                     </svg>
                 </div>
             </div>
+            <Socials />
             <h1 className="text-4xl font-bold leading-tight text=[color:var(--color-text-primary)] sm:text-4xl">
                 I'm Adrienne
             </h1>
