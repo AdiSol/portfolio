@@ -63,6 +63,12 @@ html, body {
   height: 100%;
 }
 
+@keyframes hero-orbit {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 body {
   background: var(--color-surface);
   color: var(--color-text-primary);

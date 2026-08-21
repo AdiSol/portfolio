@@ -16,7 +16,7 @@ export async function generateMetadata({
   const { slug } = await params;
   const project = getProjectFrontmatter(slug);
   return {
-    title: `${project.title} — Adrienne Soliven`,
+    title: `Adrienne Soliven — ${project.title}`,
     description: project.tagline,
   };
 }
