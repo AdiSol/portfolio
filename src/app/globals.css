@@ -18,6 +18,7 @@
   --nav-selected: #6a5acd;
   --nav-text: #333366;
   --nav-active: rgba(147, 112, 219, 0.2);
+  --nav-hover: #9230D8;
 
   /* ---- Type scale ---- */
   --font-size-xs: 0.75rem;

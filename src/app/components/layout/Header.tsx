@@ -33,7 +33,7 @@ export default function Header () {
                         alt="A logo that looks like the letter 'A' and also a girl"
                         width={45}
                         height={45}
-                        className="h-8 w-8 sm:h-11.25 sm:w-11.25"
+                        className={"h-8 w-8 sm:h-11.25 sm:w-11.25"}
                         priority
                     />
                 </Link>
@@ -55,7 +55,7 @@ export default function Header () {
                             className={`rounded-full px-3 py-1.5 text-sm font-medium transition-colors sm:px-4 sm:py-2 ${
                                 active
                                     ? `${scrolled && `bg-[color:var(--nav-active)]`} text-[color:var(--nav-selected)] text-extrabold`
-                                    : "text-[color:var(--nav-text)] hover:border-1 hover:bg-[color:var(--color-surface-alt)] hover:text-[color:var(--nav-hover)]"
+                                    : "text-[color:var(--nav-text)] hover:text-[color:var(--nav-hover)] hover:underline"
                             }`}
                         >
                             {link.label}
