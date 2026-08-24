@@ -6,7 +6,10 @@ export default function ProjectGrid({
     projects: ProjectCardData[];
 }) {
     return (
-        <div className="grid grid-cols=[repeat(auto-fit, minmax(280px, 1fr))] gap-6">
+        // <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        // <div className="grid grid-cols-[repeat(auto-fit,_minmax(340px,_1fr))] gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        
             {projects.map((project) => (
                 <ProjectCard key={project.slug ?? project.title} project={project}/>
             ))}
