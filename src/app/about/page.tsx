@@ -2,7 +2,7 @@ import SelfPortrait from "@/app/components/about/SelfPortrait";
 
 export default function AboutPage() {
     return (
-        <main className="mx-auto max-2-3xl px-6 py-16">
+        <main className="mx-auto max-w-3xl px-6 py-16">
             <h1 className="mb-10 text-3xl front-bold text-[color:var(--color:text-primary)]">
                 About
             </h1>
