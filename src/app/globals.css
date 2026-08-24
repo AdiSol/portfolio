@@ -1,9 +1,7 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
 
-/* :root {
-  background-image: url('bg.svg') ;
-} */
+
 @theme {
   /* ---- default: light mode palette ---- */
   --color-surface: #ffffff;

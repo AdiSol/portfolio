@@ -8,7 +8,9 @@ import { FaClipboardCheck } from "react-icons/fa";
 
 export default function Socials () {
     const [isCopied, setIsCopied] = useState(false);
-    const email = "asoliven.work@gmail.com"
+    const email = "asoliven.work@gmail.com";
+    const iconSize = 38;
+
     const handleCopy = async () => {
         try {
             await navigator.clipboard.writeText(email);
@@ -22,29 +24,36 @@ export default function Socials () {
         }
     }
     return (
-        <div className='justify-center items-center flex gap-8 mt-2 mb-6 pointer-fine:'>
+        <div className='justify-center items-center flex gap-16 mt-2 mb-6 text-[color:var(--color-surface-alt)]'>
             <a
                 href="https://github.com/adisol"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="transition-colors hover:text-[color:var(--color-text-primary)]"
+                className="transition-colors hover:text-[color:var(--color-accent)]"
             >
-                <FaGithub size={24} className="text-gray dark:text-white" />
+                <FaGithub size={iconSize} className="text-gray dark:text-white" />
             </a>
             <a
                 href="https://www.linkedin.com/in/adrienne-soliven-7725831aa/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="transition-colors hover:text-[color:var(--color-text-primary)]"
+                className="transition-colors hover:text-[color:var(--color-accent)]"
             >
-                <FaLinkedin size={24} className="text-gray dark:text-white" />
+                <FaLinkedin size={iconSize} className="text-gray dark:text-white" />
             </a>
 
             <button
-            onClick={handleCopy}
-                className="transition-colors flex items-center gap-2 hover:text-[color:var(--color-text-primary)]"
+                onClick={handleCopy}
+                className="transition-colors flex items-center gap-2 hover:text-[color:var(--color-accent)] cursor-pointer"
             >
-                {isCopied ? "Copied!" : <FaEnvelope size={24} className="text-gray" />}
+                <div className='relative'>
+                    <FaEnvelope size={iconSize} className="text-gray" />
+                    {isCopied && (
+                        <span className='absolute top-full left-1/2 -translate-x-1/2 mt-1 px-2 p-1 text-center whitespace-nowrap rounded-(--radius-default) bg-accent text-white'>
+                            Copied!
+                        </span>
+                    )}
+                </div>
             </button>
         </div>
     )
