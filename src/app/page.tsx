@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <main>
       <Hero />
-      <section className="mx-auto max-w-5xl px-6">
+      <section className="mx-auto max-w-6xl px-6">
         <ProjectGrid projects={featuredProjects} />
         <div className="mt-8 text-center">
           <Link href="/work" className="text-[color:var(--color-accent)] hover:underline">

@@ -6,7 +6,7 @@ export default function Hero() {
     const R = 125        //bigger = flatter
     const CY = 150
     return (
-        <section className="mx-auto max-w-3xl flex-col items-center gap-6 px-6 pb-20 pt-20 text-center sm:pt-32">
+        <section className="mx-auto max-w-3xl flex-col items-center gap-6 px-6 pb-20 pt-10 text-center sm:pt-15">
             <div
                 className="justify-center items-center flex"
             >

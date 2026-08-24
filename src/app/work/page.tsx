@@ -7,13 +7,12 @@ export default function WorkPage() {
     const gridProjects = [...tier1Projects, ...tier2Projects];
 
     return (
-        <main className="mx-auto max-w-5xl px-6 py-16">
+        <main className="mx-auto max-w-7xl px-6 py-16 lg:px-12">
             <h1 className="mb-10 text-3xl font-bold text-[color:var(--color-text-primary)]">
                 Work
             </h1>
 
             <ProjectGrid projects={gridProjects}/>
-
         </main>
     )
 }
