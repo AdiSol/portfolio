@@ -10,7 +10,7 @@ export default function Hero() {
             <div
                 className="justify-center items-center flex"
             >
-                <div className="relative h-105 w-87.5">
+                <div className="relative mx-auto aspect-[5/6] w-full max-w-87.5">
                     <Image
                         src={"/images/me-3d.png"}
                         alt="3D cartoon image of me"
