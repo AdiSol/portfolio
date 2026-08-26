@@ -51,7 +51,7 @@ export default function ProjectCard({ project }: { project: ProjectCardData }) {
                     {project.stack.slice(0, 6).map((tech) => (
                         <span
                             key={tech}
-                            className="rounded-full bg-[color:var(--color-surface)] px-2.5 py-1 text-xs text-[color:var(--color-text-secondary)]"
+                            className="rounded-full border border-[color:var(--tech-pill)] bg-[color:var(--color-surface)] px-2.5 py-1 text-xs text-[color:var(--tech-text)] "
                             >
                             {tech}
                         </span>
@@ -64,11 +64,11 @@ export default function ProjectCard({ project }: { project: ProjectCardData }) {
                     </p>
                 )} */}
                 <hr className="mt-2 border-t border-gray-300" />
-                <div className="mt-auto flex flex-wrap items-center gap-8 text-sm pt-1">
+                <div className="mt-auto flex flex-nowrap items-center gap-4 overflow-x-auto text-sm pt-1">
                     {isCaseStudy && 
                         <Link
                             href={`/work/${project.slug}`}
-                            className="font-medium text-[color:var(--link-accent)] hover:text-[color:var(--color-accent)] hover:underline flex gap-1"
+                            className="shrink-0 whitespace-nowrap font-medium text-[color:var(--link-accent)] hover:text-[color:var(--color-accent)] hover:underline flex gap-1"
                         >
                             <HiOutlineDocumentText size={20} />
                             Case study
@@ -80,7 +80,7 @@ export default function ProjectCard({ project }: { project: ProjectCardData }) {
                                 href={project.liveUrl}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="font-medium text-[color:var(--link-accent)] hover:text-[color:var(--color-accent)] hover:underline flex gap-1"
+                                className="shrink-0 whitespace-nowrap font-medium text-[color:var(--link-accent)] hover:text-[color:var(--color-accent)] hover:underline flex gap-1"
                             >
                                 <FiExternalLink size={20} />
                                 {project.title === "AnimoSched" ? <span>Published</span> : <span>Demo</span>}
@@ -91,14 +91,14 @@ export default function ProjectCard({ project }: { project: ProjectCardData }) {
                                 href={project.repoUrl}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="font-medium text-[color:var(--link-accent)] hover:text-[color:var(--color-accent)] hover:underline flex gap-1"
+                                className="shrink-0 whitespace-nowrap font-medium text-[color:var(--link-accent)] hover:text-[color:var(--color-accent)] hover:underline flex gap-1"
                             >
                                 <FiGithub size={20} />
-                                Repo 
+                                Repo
                             </a>
                         )}
                         {project.nda && (
-                        <div className=" font-medium text-xs text-[color:var(--color-text-secondary)] flex gap-2">
+                        <div className="shrink-0 whitespace-nowrap font-medium text-xs text-[color:var(--color-text-secondary)] flex gap-2">
                             <FaLock size={17}/>
                             <span>NDA</span>
                         </div>

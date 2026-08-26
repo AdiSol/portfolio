@@ -16,6 +16,9 @@
   --nav-active: rgba(147, 112, 219, 0.2);
   --nav-hover: #9230D8;
 
+  --tech-text: #4C1D95;
+  --tech-pill: rgba(147, 112, 219, 0.2);
+
   /* ---- Type scale ---- */
   --font-size-xs: 0.75rem;
   --font-size-sm: 0.875rem;

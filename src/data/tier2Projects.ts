@@ -2,6 +2,15 @@ import type { ProjectCardData } from "@/app/components/work/ProjectCard";
 
 export const tier2Projects: ProjectCardData[] = [
   {
+    title: "AkadsPH",
+    tagline: "A two-sided tutoring marketplace: profile-based tutor matching, in-platform booking and payment, and automated tutor payouts.",
+    year: 2021,
+    role: "Lead Frontend Developer",
+    stack: ["React.js", "MaterialUI", "Usability Testing"],
+    coverImage: "/images/akadsph-cover.jpg",
+    repoUrl: "https://github.com/joshmzndev/akadsph"
+  },
+  {
     title: "NU-LPR 101",
     tagline: "License plate recognition for parking lot access control, running on an edge device and trained on Taiwan plate data",
     year: 2022,
@@ -25,14 +34,5 @@ export const tier2Projects: ProjectCardData[] = [
     repoUrl: null,
     nda: true,
     ndaNote: "Source under NDA"
-  },
-  {
-    title: "AkadsPH",
-    tagline: "A two-sided tutoring marketplace: profile-based tutor matching, in-platform booking and payment, and automated tutor payouts.",
-    year: 2021,
-    role: "Lead Frontend Developer",
-    stack: ["React.js", "MaterialUI", "Usability Testing"],
-    coverImage: "/images/akadsph-cover.jpg",
-    repoUrl: "https://github.com/joshmzndev/akadsph"
   }
 ]

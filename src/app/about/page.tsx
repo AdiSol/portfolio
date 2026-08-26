@@ -12,22 +12,25 @@ export default function AboutPage() {
 
                 <div className="grid grid-cols-1 items-center gap-10 sm:grid-cols-[280ox_1fr]">
                     <p className="text-lg text-[color:var(--color-text-primaray)]">
-                        Hi, I&apos;m Adrienne — a frontend engineer with a deep interest
-                        in UI/UX, especially UX research. I like playing with ideas and
-                        interface designs, and finding ways to solve real problems
-                        through a mix of design and technology.
+                        Hi, I&apos;m Adrienne — a frontend engineer in Taipei. I build React and
+                        Next.js interfaces for AI and computer-vision products. Somewhere in there I
+                        spent a year teaching computer science to kids, who are unforgiving
+                        stakeholders and excellent teachers — I came out of it more patient, better
+                        at explaining things, and much quicker to notice when someone&apos;s confused
+                        but too polite to say so. UX research is where I started and it still shapes
+                        how I build.
                     </p>
                 </div>
             </div>
 
             <div className="mt-10 flex flex-col gap-4 text-[color:var(--color-text-secondary)]">
                 <p>
-                    When I&apos;m not building interfaces, you&apos;ll usually find me
-                    drawing — mostly portraits of my friends, sometimes experimenting
-                    with new mediums. I&apos;m a foodie at heart, and I try to stay
-                    active through hiking and working out — anything that makes me
-                    feel strong. Every so often I&apos;ll go scuba diving or bouldering
-                    too.
+                    Outside of work I draw — mostly my friends and whatever I ate that week,
+                    which is a fair summary of what I care about — and I&apos;m slowly convincing
+                    a jar of kombucha in my kitchen to behave. I climb, and recently got my lead
+                    certification, which mainly means I&apos;m nervous higher up now. Weekends
+                    I&apos;m often at Long Dong, either above the water or freediving under it.
+                    Currently learning ukulele, results pending.
                 </p>
             </div>
         </main>
