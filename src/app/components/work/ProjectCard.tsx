@@ -30,6 +30,7 @@ export default function ProjectCard({ project }: { project: ProjectCardData }) {
                     src={project.coverImage}
                     alt={`${project.title} cover image`}
                     fill
+                    sizes="(max-width: 639px) 100vw, (max-width: 1024px) 50vw, 550px"
                     className="object-cover"
                 />
             </div>

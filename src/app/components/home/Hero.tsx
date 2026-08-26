@@ -15,6 +15,7 @@ export default function Hero() {
                         src={"/images/me-3d.png"}
                         alt="3D cartoon image of me"
                         fill
+                        sizes="(min-width: 400px) 350px, 100vw"
                         className="rounded-[40%] object-contain object-bottom z-10"
                     />
                     <svg
