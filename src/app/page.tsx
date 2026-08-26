@@ -4,7 +4,9 @@ import Link from "next/dist/client/link";
 import { getAllProjects } from "@/lib/work";
 
 export default function Home() {
-  const featuredProjects = getAllProjects();
+  const featuredProjects = getAllProjects().sort(
+    (a, b) => (a.slug === "safehands" ? -1 : b.slug === "safehands" ? 1 : 0)
+  );
   return (
     <main>
       <Hero />
