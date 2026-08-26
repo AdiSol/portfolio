@@ -9,6 +9,7 @@ export const tier2Projects: ProjectCardData[] = [
     stack: ["React.js", "styled-components", "Flask Python", "Nginx", "REST API", "JWT Auth", "react-i18next (en · zh-TW · zh-CN)"],
     metric: "Rebuilt to run on edge · Reduced CPU usage by 40% · Memory usage by 35%",
     coverImage: "/images/nulpr101-cover.jpg",
+    liveUrl: "https://drive.google.com/file/d/1ZbpRZwo0BB0gYTkV2xNMy-l7K9gWiDwt/view",
     repoUrl: null,
     nda: true,
     ndaNote: "Source under NDA"
@@ -27,7 +28,7 @@ export const tier2Projects: ProjectCardData[] = [
   },
   {
     title: "AkadsPH",
-    tagline: "Tutor-matching platform with payments and credit-store flows",
+    tagline: "A two-sided tutoring marketplace: profile-based tutor matching, in-platform booking and payment, and automated tutor payouts.",
     year: 2021,
     role: "Lead Frontend Developer",
     stack: ["React.js", "MaterialUI", "Usability Testing"],

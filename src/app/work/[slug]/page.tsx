@@ -108,7 +108,7 @@ export default async function CaseStudyPage({
 
         {project.nda && (
             <span className="flex items-center gap-2 mt-2">
-                <FaLock size={24} className="text-black" ></FaLock>
+                <FaLock size={24} className="text-black" />
                 <span className="mt-3 text-sm text-[color:var(--color-text-secondary)]">
                     {project.ndaNote}{" "}
                 </span>
