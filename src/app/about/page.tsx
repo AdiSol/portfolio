@@ -3,15 +3,15 @@ import SelfPortrait from "@/app/components/about/SelfPortrait";
 export default function AboutPage() {
     return (
         <main className="mx-auto max-w-3xl px-6 py-16">
-            <h1 className="mb-10 text-3xl front-bold text-[color:var(--color:text-primary)]">
+            <h1 className="mb-10 text-3xl font-bold text-[color:var(--color-text-primary)]">
                 About
             </h1>
 
-            <div className="grid grid-cols-1 items-center gap-10 sm:grid-cols-[280px_1fr]">
-                <SelfPortrait />
+            <div className="rounded-2xl border border-white/50 bg-[#fffcf9]/60 p-6 backdrop-blur-2xl backdrop-saturate-150 sm:p-8">
+                <div className="grid grid-cols-1 items-center gap-10 sm:grid-cols-[280px_1fr]">
+                    <SelfPortrait />
 
-                <div className="grid grid-cols-1 items-center gap-10 sm:grid-cols-[280ox_1fr]">
-                    <p className="text-lg text-[color:var(--color-text-primaray)]">
+                    <p className="max-w-[65ch] text-lg font-medium leading-[1.7] text-[color:var(--color-text-primary)]">
                         Hi, I&apos;m Adrienne — a frontend engineer in Taipei. I build React and
                         Next.js interfaces for AI and computer-vision products. Somewhere in there I
                         spent a year teaching computer science to kids, who are unforgiving
@@ -21,10 +21,8 @@ export default function AboutPage() {
                         how I build.
                     </p>
                 </div>
-            </div>
 
-            <div className="mt-10 flex flex-col gap-4 text-[color:var(--color-text-secondary)]">
-                <p>
+                <p className="mt-8 max-w-[65ch] font-medium leading-[1.7] text-[color:var(--color-text-secondary)]">
                     Outside of work I draw — mostly my friends and whatever I ate that week,
                     which is a fair summary of what I care about — and I&apos;m slowly convincing
                     a jar of kombucha in my kitchen to behave. I climb, and recently got my lead
