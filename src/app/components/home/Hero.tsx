@@ -15,7 +15,6 @@ export default function Hero() {
                         src={"/images/me-3d.png"}
                         alt="3D cartoon image of me"
                         fill
-                        sizes="(min-width: 400px) 350px, 100vw"
                         className="rounded-[40%] object-contain object-bottom z-10"
                     />
                     <svg
@@ -28,7 +27,7 @@ export default function Hero() {
                                d={`M ${CX} ${CY} m ${-R} 0 a ${R} ${R} 0 1 1 ${R * 2} 0 a ${R} ${R} 0 1 1 ${-R * 2} 0`}
                             />
                         </defs>
-                        <text>
+                        <text className="anim-text">
                             <textPath href="#hero-circle-text-path" startOffset="27%" textAnchor="middle">
                                 Hello There!
                             </textPath>
