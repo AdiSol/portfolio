@@ -24,14 +24,14 @@ export default function Socials () {
         }
     }
     return (
-        <div className='justify-center items-center flex gap-16 mt-2 mb-6 text-[color:var(--color-surface-alt)]'>
+        <div className='justify-center items-center flex gap-16 mt-2 mb-6 text-[color:var(--color-text-secondary)]'>
             <a
                 href="https://github.com/adisol"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="transition-colors hover:text-[color:var(--color-accent)]"
             >
-                <FaGithub size={iconSize} className="text-gray dark:text-white" />
+                <FaGithub size={iconSize} />
             </a>
             <a
                 href="https://www.linkedin.com/in/adrienne-soliven-7725831aa/"
@@ -39,7 +39,7 @@ export default function Socials () {
                 rel="noopener noreferrer"
                 className="transition-colors hover:text-[color:var(--color-accent)]"
             >
-                <FaLinkedin size={iconSize} className="text-gray dark:text-white" />
+                <FaLinkedin size={iconSize} />
             </a>
 
             <button
@@ -47,7 +47,7 @@ export default function Socials () {
                 className="transition-colors flex items-center gap-2 hover:text-[color:var(--color-accent)] cursor-pointer"
             >
                 <div className='relative'>
-                    <FaEnvelope size={iconSize} className="text-gray" />
+                    <FaEnvelope size={iconSize} />
                     {isCopied && (
                         <span className='absolute top-full left-1/2 -translate-x-1/2 mt-1 px-2 p-1 text-center whitespace-nowrap rounded-(--radius-default) bg-accent text-white'>
                             Copied!

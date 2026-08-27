@@ -29,7 +29,7 @@ export default function Footer() {
                         onClick={handleCopy}
                         className="transition-colors flex items-center gap-2 hover:text-[color:var(--color-accent)]"
                     >
-                        <FaEnvelope size={24} className="dark:text-white" />
+                        <FaEnvelope size={24} />
                         {isCopied 
                             ?
                             <span className='absolute translate-x-8 mt-1 px-2 p-1 text-center whitespace-nowrap rounded-(--radius-default) bg-accent text-white'>
@@ -49,7 +49,7 @@ export default function Footer() {
                         rel="noopener noreferrer"
                         className="transition-colors flex gap-2 hover:text-[color:var(--color-accent)]"
                     >
-                        <FaGithub size={24} className="dark:text-white" />
+                        <FaGithub size={24} />
                         <span>Github</span>
                     </a>
                     <a
@@ -58,7 +58,7 @@ export default function Footer() {
                         rel="noopener noreferrer"
                         className="transition-colors flex gap-2 hover:text-[color:var(--color-accent)]"
                     >
-                        <FaLinkedin size={24} className="dark:text-white" />
+                        <FaLinkedin size={24} />
                         <span>LinkedIn</span>
                     </a>
                 </div>
