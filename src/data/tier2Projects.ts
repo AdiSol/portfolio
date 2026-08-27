@@ -8,7 +8,8 @@ export const tier2Projects: ProjectCardData[] = [
     role: "Lead Frontend Developer",
     stack: ["React.js", "MaterialUI", "Usability Testing"],
     coverImage: "/images/akadsph-cover.jpg",
-    repoUrl: "https://github.com/joshmzndev/akadsph"
+    repoUrl: "https://github.com/joshmzndev/akadsph",
+    liveUrl: "https://youtu.be/Cz8kp0ibN4Q?t=87"
   },
   {
     title: "NU-LPR 101",
