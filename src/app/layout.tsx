@@ -24,6 +24,13 @@ const spaceGrotesk = Space_Grotesk({
 export const metadata: Metadata = {
   title: "Adrienne Soliven — Frontend Engineer",
   description: "Frontend engineer building React interfaces for AI and EdTech products — then watching real users break them.",
+  openGraph: {
+    title: "Adrienne Soliven — Frontend Engineer",
+    description: "Frontend engineer building React interfaces for AI and EdTech products — then watching real users break them.",
+    images: ["/og-image.png"],
+    url: "https://adriennesoliven",
+    siteName: "Adrienne Soliven",
+  },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
