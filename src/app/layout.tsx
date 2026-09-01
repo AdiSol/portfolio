@@ -3,6 +3,7 @@ import "./globals.css";
 import { BackgroundBlobs } from "./components/layout/BackgroundBlobs";
 import Header from "./components/layout/Header";
 import Footer from "./components/layout/Footer";
+import type { Metadata } from "next";
 
 
 const fraunces = Fraunces({
@@ -20,6 +21,10 @@ const spaceGrotesk = Space_Grotesk({
   variable: "--font-heading",
 });
 
+export const metadata: Metadata = {
+  title: "Adrienne Soliven — Frontend Engineer",
+  description: "Frontend engineer building React interfaces for AI and EdTech products — then watching real users break them.",
+};
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
