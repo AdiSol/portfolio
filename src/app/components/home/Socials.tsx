@@ -24,7 +24,7 @@ export default function Socials () {
         }
     }
     return (
-        <div className='justify-center items-center flex gap-16 mt-2 mb-6 text-[color:var(--color-text-secondary)]'>
+        <div className='justify-center items-center flex gap-16 mt-2 mb-6 text-white'>
             <a
                 href="https://github.com/adisol"
                 target="_blank"
