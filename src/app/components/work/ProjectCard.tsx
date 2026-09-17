@@ -26,13 +26,20 @@ export default function ProjectCard({ project }: { project: ProjectCardData }) {
     return (
         <div className="flex flex-col overflow-hidden rounded-[var(--radius-card)] bg-[color:var(--color-surface-alt)]">
             <div className="relative aspect-video w-full overflow-hidden">
-                <Image
+                {project.coverImage.endsWith(".gif") ? (
+                    <img
                     src={project.coverImage}
-                    alt={`${project.title} cover image`}
+                    alt={`${project.title} cover`}
+                    className="absolute inset-0 h-full w-full object-cover"
+                    />
+                ) : (
+                    <Image
+                    src={project.coverImage}
+                    alt={`${project.title} cover`}
                     fill
-                    sizes="(max-width: 639px) 100vw, (max-width: 1024px) 50vw, 550px"
                     className="object-cover"
-                />
+                    />
+                )}
             </div>
 
             <div className="flex flex-1 flex-col gap-2 p-4">

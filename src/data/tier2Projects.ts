@@ -7,7 +7,7 @@ export const tier2Projects: ProjectCardData[] = [
     year: 2021,
     role: "Lead Frontend Developer",
     stack: ["React.js", "MaterialUI", "Usability Testing"],
-    coverImage: "/images/akadsph-cover.jpg",
+    coverImage: "/images/akadsph-demo.gif",
     repoUrl: "https://github.com/AdiSol/akadsph",
     liveUrl: "https://youtu.be/Cz8kp0ibN4Q?t=87"
   },
