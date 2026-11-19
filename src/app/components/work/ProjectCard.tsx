@@ -56,7 +56,7 @@ export default function ProjectCard({ project }: { project: ProjectCardData }) {
                     {project.tagline}
                 </p>
                 <div className="flex flex-wrap gap-2">
-                    {project.stack.slice(0, 6).map((tech) => (
+                    {project.stack.slice(0, 5).map((tech) => (
                         <span
                             key={tech}
                             className="rounded-full border border-[color:var(--tech-pill)] bg-[color:var(--color-surface)] px-2.5 py-1 text-xs text-[color:var(--tech-text)] "

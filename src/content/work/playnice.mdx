@@ -3,7 +3,7 @@ title: "PlayNice"
 slug: "playnice"
 year: 2026
 role: "Sole Developer — Design, Frontend, Backend, Deployment"
-stack: ["Next.js", "TypeScript", "Cloudflare Workers", "Cloudflare D1", "Drizzle ORM", "Tailwind CSS"]
+stack: ["Next.js", "TypeScript", "Cloudflare Workers", "Cloudflare D1", "Drizzle ORM", "Tailwind CSS", "Vitest", "Playwright", "GitHub Actions"]
 tagline: "A catalogue-to-checkout site that replaced Instagram DM orders for a local brand. Built, designed, and shipped solo for the cost of a domain name."
 coverImage: "/images/playnice-cover.gif"
 liveUrl: "https://playnicestore.com"
@@ -12,7 +12,7 @@ repoUrl: ""
 
 ## Overview
 
-PlayNice is a popular bag business in the Philippines that used to run entirely through Instagram DMs — customers messaged to order, and orders were tracked by hand in a spreadsheet. I designed and built the site that replaced that workflow end to end: customers now browse, order, pay, and track their order themselves, while the owners manage everything from an admin dashboard. I was the sole developer — design, frontend, backend, database, and deployment — and the whole thing runs for roughly the cost of a domain name a year. It's deployed and live, with final polish ongoing.
+PlayNice is a popular bag business in the Philippines that used to run entirely through Instagram DMs — customers messaged to order, and orders were tracked by hand in a spreadsheet. I designed and built the site that replaced that workflow end to end: customers now browse, order, pay, and track their order themselves, while the owners manage everything from an admin dashboard. I was the sole developer — design, frontend, backend, database, testing, and deployment — and the whole thing runs for roughly the cost of a domain name a year. It's deployed and live, with final polish ongoing.
 
 ## The Problem
 
@@ -23,27 +23,33 @@ PlayNice is a popular bag business in the Philippines that used to run entirely 
 
 ## What I Built
 
-**For customers:** a mobile-first catalogue with zoomable product photos, a cart, and a checkout that calculates shipping from a real Philippine province/city/barangay address lookup. After ordering, each customer gets a private tracker link — no account needed — showing order status, payment instructions, and a one-step screenshot upload to confirm payment.
+**For customers:** a mobile-first catalogue with zoomable product photos, a cart, and a checkout that calculates shipping from a real Philippine province/city/barangay address lookup. Before anything is saved, customers review their order on a summary step and can go back to edit without losing what they typed. After ordering, each customer gets a private tracker link — no account needed — showing order status, payment instructions, and a one-step screenshot upload to confirm payment.
 
 **For the owners:** an admin dashboard behind Google sign-in, with an order queue that surfaces what needs attention first, payment-proof review, product management, and editable shop settings (pricing, shipping fees, the announcement banner) so they never need to ask me to change a number. A dashboard tracks revenue, best sellers, and cart-to-order conversion.
 
 **Engineering decisions worth calling out:**
 
-- **Stock reserves itself, then releases itself.** Placing an order locks the stock for a window; if payment never arrives, a scheduled job (running every 10 minutes) cancels the order and frees the stock automatically. This directly fixed the original "reserved and never paid for" problem.
+- **Stock reserves itself, then releases itself.** Placing an order locks the stock for a window; if payment never arrives, a scheduled job (running every 10 minutes) expires the order and frees the stock automatically. This directly fixed the original "reserved and never paid for" problem.
 - **Overselling is prevented by the database, not by hope.** Stock decrements happen in a single batched write guarded by a `CHECK (stock >= 0)` constraint — if a decrement would go negative, the whole write aborts. No race condition can oversell a bag.
 - **The client is never trusted.** The cart only ever holds product IDs and quantities; prices, shipping, and totals are recalculated server-side on every request, so nothing a customer's browser says is taken at face value.
-- **Tracking without accounts.** A single unguessable order code is the only credential needed to check status — no login, no password, no stored personal data on the tracker page itself.
+- **Tracking without accounts.** A single unguessable order code is the only credential needed to check status — no login, no password. Because the link is the credential, the tracker deliberately never shows the customer's phone number or email.
+
+## Testing
+
+- **Unit tests (Vitest)** cover everything that handles customer input or encodes a business rule: checkout validation, payment-screenshot checks, shipping prices, order statuses. That's where real customers break things and where security matters, so these tests list what must be rejected as well as what must be accepted. They run in about a second, so they run on every change.
+- **End-to-end tests (Playwright)** run the checkout and the admin order flow in a real browser, at desktop and phone sizes. Unit tests prove each piece works; these prove the pieces work together the way a customer actually uses them.
+- **Continuous integration (GitHub Actions)** runs linting, type checks, the unit tests and the production build on every change before it can reach the live site. A mistake shows up as a failed check, not a broken shop.
 
 ## Working with Claude
 
 I built this with Claude as a working partner, and I think it's worth being upfront about how, because directing it well was its own skill.
 
-I kept a project-level context file — the stack, decisions already made, schema, conventions, and gotchas I'd hit — so every new session started with real context instead of me re-explaining the project or Claude re-deriving it from the codebase. I noticed the more specific my ask (which file, which behavior, which constraint), the better and cheaper the answer; vague prompts got vague, speculative code back.
+I kept a project-level context file — the stack, decisions already made, schema, conventions, and gotchas I'd hit — so every new session started with real context instead of me re-explaining the project or Claude re-deriving it from the codebase. I noticed the more specific my ask (which file, which behavior, which constraint), the better and cheaper the answer; vague prompts got vague, speculative code back. 
 
-I was new to the Next.js App Router, Drizzle, and Cloudflare's stack, so I made every change come with an explanation of how and why — not just working code. That's what let me actually debug it myself and defend every decision later, instead of shipping something I couldn't explain.
+I was new to the Next.js App Router, Drizzle, Cloudflare's stack, and automated testing, so I made every change come with an explanation of how and why — not just working code. That's what let me actually debug it myself and defend every decision later, instead of shipping something I couldn't explain.
 
-Claude is noticeably weaker at design and UX judgment than at implementation — left alone, its first instinct for the admin's stock editor was a plain number input, where every e-commerce admin uses plus/minus steppers. I made that call and the rest of the product decisions myself, and treated its output as a first draft to review, not a final answer. I also never gave it access to secrets or production — API keys and OAuth tokens stayed in env files and the host's own secret store, and staging was kept fully separate from production so any mistake, mine or the model's, had a small blast radius.
+Claude is noticeably weaker at design and UX judgment than at implementation — left alone, its first instinct for the admin's stock editor was a plain number input, where every e-commerce admin uses plus/minus steppers. I made that call and the rest of the product decisions myself, and treated its output as a first draft to review, not a final answer. I also never gave it access to secrets or production — API keys, OAuth tokens, and session cookies stayed in env files, git-ignored files, and the host's own secret store, and staging was kept fully separate from production so any mistake, mine or the model's, had a small blast radius.
 
 ## Status & What I Learned
 
-The site is deployed and live, with final polish and testing ongoing before full launch — so there's no order volume or revenue to report yet. The real learning was in the constraints: designing around free-tier infrastructure instead of reaching for heavier tools, keeping Server and Client Components cleanly separated, and treating money and concurrency as first-class problems rather than details to patch later.
+The site is deployed and live, with automated tests and a CI check in place and final polish ongoing before full launch — so there's no order volume or revenue to report yet. The real learning was in the constraints: designing around free-tier infrastructure instead of reaching for heavier tools, keeping Server and Client Components cleanly separated, treating money and concurrency as first-class problems rather than details to patch later, and learning that tests are most valuable where a bug would be invisible in normal use.
